@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
-import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const navItems = [
-        { path: "/profile", label: "Profile" },
-        { path: "/dialogs", label: "Messages" },
-        { path: "/news", label: "News" },
-        { path: "/music", label: "Music" },
-        { path: "/settings", label: "Settings" }
-    ];
+  const [activeLink, setActiveLink] = useState(null);
 
-    return (
-        <nav className={s.nav}>
-            {navItems.map((item, index) => (
-                <div key={index} className={s.item}>
-                    <NavLink to={item.path} activeClassName={s.activeLink}>
-                        {item.label}
-                    </NavLink>
-                </div>
-            ))}
-        </nav>
-    );
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
+  return (
+    <nav className={s.nav}>
+      {['Profile', 'Dialogs', 'News', 'Music', 'Settings'].map((text, index) => (
+        <div key={index} className={s.item}>
+          <NavLink
+            to={`/${text.toLowerCase()}`}
+            className={activeLink === text ? s.activeLink : ''}
+            onClick={() => handleLinkClick(text)}
+          >
+            {text}
+          </NavLink>
+        </div>
+      ))}
+    </nav>
+  );
 };
 
 export default Navbar;

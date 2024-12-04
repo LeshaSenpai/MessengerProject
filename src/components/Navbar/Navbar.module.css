@@ -1,14 +1,55 @@
 .nav {
-    grid-area: n;
-    background-color: burlywood;
-    padding: 20px;
-}
-
-.item a {
-    color: white;
-    text-decoration: none;
-}
-
-.item a.activeLink {
-    color: gold;
-}
+    position: fixed; /* Фиксируем панель на экране */
+    top: 0;
+    left: 0;
+    width: 200px; /* Ширина панели */
+    height: 100%; /* Высота панели */
+    background-color: #f8f9fa; /* Светлый фон */
+    padding: 20px 10px;
+    border-right: 2px solid #e9ecef; /* Разделительная линия справа */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1); /* Тень для объёма */
+    font-family: Arial, sans-serif;
+    z-index: 1000; /* Поверхность панели */
+  }
+  
+  .content {
+    margin-left: 220px; /* Отступ слева для контента, чтобы учесть ширину панели + отступ */
+    padding: 20px; /* Внутренние отступы для красоты */
+    background-color: #fff; /* Фон страницы */
+    min-height: 100vh; /* Занимаем всю высоту */
+    box-sizing: border-box; /* Учитываем отступы в расчёте ширины */
+  }
+  
+  .item {
+    margin-bottom: 15px; /* Отступы между кнопками */
+    font-size: 16px;
+  }
+  
+  .item a {
+    display: block; /* Ссылка занимает всю ширину */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #333; /* Основной цвет текста */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+    text-align: center; /* Центрируем текст */
+  }
+  
+  .item a:hover {
+    color: #007bff; /* Цвет текста при наведении */
+    background-color: #e9ecef; /* Фон при наведении */
+  }
+  
+  .item a:active {
+    background-color: #007bff; /* Тёмно-синий фон */
+    color: white; /* Белый текст */
+  }
+  
+  .activeLink {
+    pointer-events: none; /* Делаем ссылку неактивной */
+    color: white; /* Белый текст */
+    background-color: #007bff; /* Тёмно-синий фон */
+    font-weight: bold;
+    border: 2px solid #0056b3; /* Рамка вокруг активной ссылки */
+  }
+  

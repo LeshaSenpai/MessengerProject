@@ -13,6 +13,14 @@
     grid-area: c;
     background-color: cornflowerblue;
 }
+.content {
+    margin-left: 220px; 
+    padding: 20px; 
+    background-color: #fff; 
+    min-height: 100vh; 
+    box-sizing: border-box; 
+  }
+  
 
 
 
