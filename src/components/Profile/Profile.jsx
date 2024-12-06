@@ -1,18 +1,19 @@
-import React from 'react';
-import s from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts';
+import React from "react";
+import { observer } from "mobx-react-lite";
+import s from "./Profile.module.css";
+import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import {profileStore} from "../../stores/ProfileStore";
 
-const Profile = (props) => {
+const Profile = observer(() => {
+  const { posts } = profileStore._state.profilePage;
 
-    return (
-        <div>
-            <ProfileInfo />
-            <MyPosts posts={props.profilePage.posts}
-                     newPostText={props.profilePage.newPostText}
-                     dispatch={props.dispatch} />
-        </div>
-    )
-}
+  return (
+    <div>
+      <ProfileInfo />
+      <MyPosts posts={posts} newPostText={profileStore._state.profilePage.newPostText} />
+    </div>
+  );
+});
 
 export default Profile;
