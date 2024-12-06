@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-
 class NewsStore {
   newsPage = {
     news: [
