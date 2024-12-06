@@ -1,35 +1,34 @@
-import React from 'react';
-import s from './MyPosts.module.css';
-import Post from './Post/Post';
+import React from "react";
+import { observer } from "mobx-react-lite";
+import s from "./MyPosts.module.css";
+import Post from "./Post/Post";
+import {profileStore} from "../../../stores/ProfileStore";
 
-const MyPosts = (props) => {
+const MyPosts = observer(() => {
+  const { posts, newPostText } = profileStore._state.profilePage;
 
-    let posts = [
-        {id: 1, message: 'Hi, how are you?', likesCount: 12},
-        {id: 2, message: 'It\'s my first post', likesCount: 11},
-        {id: 3, message: 'Blabla', likesCount: 11},
-        {id: 4, message: 'Dada', likesCount: 11}
-    ]
+  const onPostChange = (event) => {
+    profileStore.updateNewPostText(event.target.value);
+  };
 
-    let postsElements =
-        posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>);
+  const addPost = () => {
+    profileStore.addPost();
+  };
 
-    return (
-        <div className={s.postsBlock}>
-            <h3>My posts</h3>
-            <div>
-                <div>
-                    <textarea></textarea>
-                </div>
-                <div>
-                    <button>Add post</button>
-                </div>
-            </div>
-            <div className={s.posts}>
-                { postsElements }
-            </div>
-        </div>
-    )
-}
+  const postsElements = posts.map((p) => (
+    <Post message={p.message} likesCount={p.likesCount} key={p.id} />
+  ));
+
+  return (
+    <div className={s.postsBlock}>
+      <h3>My posts</h3>
+      <div>
+        <textarea onChange={onPostChange} value={newPostText} />
+        <button onClick={addPost}>Add post</button>
+      </div>
+      <div className={s.posts}>{postsElements}</div>
+    </div>
+  );
+});
 
 export default MyPosts;
