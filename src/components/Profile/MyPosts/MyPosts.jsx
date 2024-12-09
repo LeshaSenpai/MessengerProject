@@ -16,7 +16,13 @@ const MyPosts = observer(() => {
   };
 
   const postsElements = posts.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} key={p.id} />
+    <Post
+      key={p.id}
+      id={p.id}
+      message={p.message}
+      likesCount={p.likesCount}
+      liked={p.liked}
+    />
   ));
 
   return (
