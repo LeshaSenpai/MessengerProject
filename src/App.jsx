@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
+import Users from "./components/Users/Users";
 
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
@@ -23,6 +24,10 @@ const App = () => {
       <Navbar />
       <div className="app-wrapper-content">
         <Routes>
+        <Route 
+        path="/users" 
+        element={<Users />} 
+        />
           <Route
             path="/dialogs"
             element={<Dialogs store={dialogsStore} />}
