@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className={s.nav}>
-      {['Profile', 'Dialogs', 'News', 'Music', 'Settings'].map((text, index) => (
+      {['Profile', 'Dialogs', 'News', 'Music', 'Users', 'Settings'].map((text, index) => (
         <div key={index} className={s.item}>
           <NavLink
             to={`/${text.toLowerCase()}`}
