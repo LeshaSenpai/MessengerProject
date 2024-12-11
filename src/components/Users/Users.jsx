@@ -15,7 +15,7 @@ const Users = () => {
               <p className={s.userName}>{user.name}</p>
             </div>
             <div className={s.actions}>
-              <Link to={`/chat/${user.name}`} className={s.chatButton}>
+              <Link to={`/dialogs/${user.name}`} className={s.chatButton}>
                 Start Chat
               </Link>
               <Link to={`/profile/${user.name}`} className={s.profileButton}>
