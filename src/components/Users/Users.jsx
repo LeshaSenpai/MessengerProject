@@ -1,42 +1,30 @@
 import React, { useState } from "react";
 import { usersMock } from "./UsersMock";
 import { Link } from "react-router-dom";
+import s from "./Users.module.css";
 
 const Users = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 7;
-
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = usersMock.slice(indexOfFirstUser, indexOfLastUser);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
   return (
-    <div>
-      <h1>Users</h1>
-      <div>
-        {currentUsers.map((user) => (
-          <div key={user.id} style={{ marginBottom: "20px", display: "flex", alignItems: "center" }}>
-            <img src={user.photo} alt={user.name} style={{ borderRadius: "50%", marginRight: "10px" }} />
-            <div>
-              <h3>{user.name}</h3>
-              <Link to={`/dialogs/${user.name}`}>Начать чат</Link>
+    <div className={s.users}>
+      <h2>Users</h2>
+      <ul className={s.userList}>
+        {usersMock.map((user) => (
+          <li key={user.id} className={s.userItem}>
+            <div className={s.userInfo}>
+              <img src={user.photo} alt={user.name} className={s.userPhoto} />
+              <p className={s.userName}>{user.name}</p>
             </div>
-          </div>
+            <div className={s.actions}>
+              <Link to={`/chat/${user.name}`} className={s.chatButton}>
+                Start Chat
+              </Link>
+              <Link to={`/profile/${user.name}`} className={s.profileButton}>
+                View Profile
+              </Link>
+            </div>
+          </li>
         ))}
-      </div>
-
-      <div style={{ marginTop: "20px" }}>
-        {currentPage > 1 && (
-          <button onClick={() => handlePageChange(currentPage - 1)}>Предыдущая</button>
-        )}
-        {indexOfLastUser < usersMock.length && (
-          <button onClick={() => handlePageChange(currentPage + 1)}>Следующая</button>
-        )}
-      </div>
+      </ul>
     </div>
   );
 };

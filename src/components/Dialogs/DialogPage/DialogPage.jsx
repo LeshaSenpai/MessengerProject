@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import s from "./DialogPage.module.css";
+import { messagesMock } from "../../Users/MessageMock";
 
 const DialogPage = () => {
   const { username } = useParams(); 
-  const [messages, setMessages] = useState([
-    { text: "Hello!", sender: "Alice" },
-    { text: "Hi there!", sender: "Me" },
-  ]);
+  const userMessages = messagesMock.filter((msg) => msg.username === username);
+
+  const [messages, setMessages] = useState(userMessages); 
   const [newMessage, setNewMessage] = useState("");
 
   const sendMessage = () => {
     if (newMessage.trim()) {
-      setMessages([...messages, { text: newMessage, sender: "Me" }]);
+      const newMsg = { username: "Me", message: newMessage };
+      setMessages([...messages, newMsg]); 
       setNewMessage("");
     }
   };
@@ -24,10 +25,10 @@ const DialogPage = () => {
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={msg.sender === "Me" ? s.myMessage : s.theirMessage}
+            className={msg.username === "Me" ? s.myMessage : s.theirMessage}
           >
-            <strong>{msg.sender}: </strong>
-            {msg.text}
+            <strong>{msg.username}: </strong>
+            {msg.message}
           </div>
         ))}
       </div>

@@ -11,7 +11,8 @@ import Users from "./components/Users/Users";
 
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
-import {DialogList} from "./components/Dialogs/DialogList/DialogList"
+
+import UserProfile from "./components/Users/UserProfile/UserProfile";
 
 import {profileStore} from "./stores/ProfileStore";
 import {dialogsStore} from "./stores/DialogsStore";
@@ -41,7 +42,7 @@ const App = () => {
             path="/profile"
             element={<Profile store={profileStore} />}
           />
-
+          <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
         </Routes>
       </div>

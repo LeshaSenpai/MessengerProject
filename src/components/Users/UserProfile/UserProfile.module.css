@@ -1,0 +1,37 @@
+.userProfile {
+    padding: 20px;
+  }
+  
+  .profileContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .userPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profileDetails {
+    max-width: 400px;
+  }
+  
+  .profileDetails h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .profileDetails p {
+    margin: 5px 0;
+  }
+  
+  .notFound {
+    padding: 20px;
+    font-size: 18px;
+    color: #d9534f;
+  }
+  
