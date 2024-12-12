@@ -1,4 +1,4 @@
-export const usersMock = [
+export const UsersAPI = [
   {
     id: 333,
     name: "Alice",

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { usersMock } from "./UsersMock";
+import { UsersAPI } from "./UsersAPI";
 import { Link } from "react-router-dom";
 import s from "./Users.module.css";
 
@@ -8,7 +8,7 @@ const Users = () => {
     <div className={s.users}>
       <h2>Users</h2>
       <ul className={s.userList}>
-        {usersMock.map((user) => (
+        {UsersAPI.map((user) => (
           <li key={user.id} className={s.userItem}>
             <div className={s.userInfo}>
               <img src={user.photo} alt={user.name} className={s.userPhoto} />

@@ -1,15 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { usersMock } from "../UsersMock";
+import { useParams, useNavigate } from "react-router-dom";
+import { UsersAPI } from "../UsersAPI";
 import s from "./UserProfile.module.css";
 
 const UserProfile = () => {
     const { username } = useParams();
-    const user = usersMock.find((user) => user.name === username);
+    const navigate = useNavigate();
+    const user = UsersAPI.find((user) => user.name === username);
   
-    if (!user) {
-      return <div className={s.notFound}>User not found</div>;
-    }
+      if (!user) {
+        navigate("/not-found"); 
+      }
   
     return (
       <div className={s.userProfile}>

@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Users from "./components/Users/Users";
+import RedirectPage from "./components/Redirect/RedirectPage";
 
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
@@ -44,6 +45,7 @@ const App = () => {
           />
           <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
+          <Route path="*" element={<RedirectPage />} />
         </Routes>
       </div>
     </div>

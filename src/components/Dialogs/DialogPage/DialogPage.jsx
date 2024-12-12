@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import s from "./DialogPage.module.css";
-import { messagesMock } from "../../Users/MessageMock";
+import { messagesAPI } from "../../Users/MessageAPI";
 
 const DialogPage = () => {
   const { username } = useParams(); 
-  const userMessages = messagesMock.filter((msg) => msg.username === username);
+  const userMessages = messagesAPI.filter((msg) => msg.username === username);
 
   const [messages, setMessages] = useState(userMessages); 
   const [newMessage, setNewMessage] = useState("");

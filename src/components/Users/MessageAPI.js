@@ -1,4 +1,4 @@
-export const messagesMock = [
+export const messagesAPI = [
     { username: "Alice", message: "Hello, this is Alice!" },
     { username: "Bob", message: "Hi, I'm Bob! Nice to meet you!" },
     { username: "Charlie", message: "Hey there, I'm Charlie!" },
