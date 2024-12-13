@@ -9,6 +9,7 @@ import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Users from "./components/Users/Users";
 import RedirectPage from "./components/Redirect/RedirectPage";
+import AuthorizationForm from "./components/Authorisation/Auth"
 
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
@@ -45,6 +46,7 @@ const App = () => {
           />
           <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
+          <Route path="/authorization" element={<AuthorizationForm />} />
           <Route path="*" element={<RedirectPage />} />
         </Routes>
       </div>
