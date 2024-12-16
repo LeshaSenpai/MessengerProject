@@ -1,0 +1,31 @@
+.redirectPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .redirectPage h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .goHomeButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .goHomeButton:hover {
+    background-color: #0056b3;
+  }
+  

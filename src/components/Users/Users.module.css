@@ -1,0 +1,56 @@
+.users {
+    padding: 20px;
+  }
+  
+  .userList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .userItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .userInfo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userPhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .userName {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chatButton,
+  .profileButton {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #e5eaf0;
+    border-radius: 4px;
+    color: #e5eaf0;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .chatButton:hover,
+  .profileButton:hover {
+    background-color: #e5eaf0;
+    color: #fff;
+  }
+  
