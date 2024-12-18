@@ -11,6 +11,8 @@ import AuthorizationForm from "./components/Authorisation/Auth";
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
 import UserProfile from "./components/Users/UserProfile/UserProfile";
+import Login from "./components/Authorisation/Login";
+import Dashboard from "./components/Authorisation/Dashboard";
 import { profileStore } from "./stores/ProfileStore";
 import { dialogsStore } from "./stores/DialogsStore";
 import { newsStore } from "./stores/NewsStore";
@@ -25,7 +27,8 @@ const App: React.FC = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/dialogs" element={<Dialogs store={dialogsStore} />} />
           <Route path="/dialogs/:username" element={<DialogPage />} />
-          
+          <Route path="/login" element={<Login />} />
+          <Route path="/Dashboard" element={<Dashboard />}/>
           <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
           <Route path="/authorization" element={<AuthorizationForm />} />
