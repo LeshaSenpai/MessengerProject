@@ -1,4 +1,12 @@
 import { makeAutoObservable } from "mobx";
+
+export interface News {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
 class NewsStore {
   newsPage = {
     news: [
@@ -18,13 +26,12 @@ class NewsStore {
       },
       {
         id: 3,
-        title:
-          "Logitech G Pro X Superlight - Почему Популярна У Киберспортсменов?",
+        title: "Logitech G Pro X Superlight - Почему Популярна У Киберспортсменов?",
         description:
           "В этом ролике я рассказываю о мыши Logitech G Pro X SuperLight, как эта мышь стала самой популярной мышью у киберспортсменов, а также почему вообще игроки пересаживаются на беспроводные мыши. Приятного просмотра!",
         image: "https://youtu.be/KpXuStLS-dg?si=YNgY7sAuD9lwOWXG",
       },
-    ],
+    ] as News[],
   };
 
   constructor() {
@@ -33,4 +40,4 @@ class NewsStore {
 }
 
 const newsStore = new NewsStore();
-export {newsStore};
+export { newsStore, NewsStore };

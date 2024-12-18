@@ -1,5 +1,15 @@
 import { makeAutoObservable } from "mobx";
 
+export interface Dialog {
+  id: number;
+  name: string;
+}
+
+export interface Message {
+  id: number;
+  message: string;
+}
+
 class DialogsStore {
   dialogsPage = {
     dialogs: [
@@ -9,21 +19,21 @@ class DialogsStore {
       { id: 4, name: "Angelina" },
       { id: 5, name: "Vika" },
       { id: 6, name: "Valera" },
-    ],
+    ] as Dialog[],
     messages: [
       { id: 1, message: "Hello" },
       { id: 2, message: "How are you?" },
       { id: 3, message: "Yo" },
       { id: 4, message: "Hey" },
       { id: 5, message: "Sup?" },
-    ],
+    ] as Message[],
   };
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  addMessage(newMessage) {
+  addMessage(newMessage: string) {
     this.dialogsPage.messages.push({
       id: this.dialogsPage.messages.length + 1,
       message: newMessage,
@@ -32,4 +42,4 @@ class DialogsStore {
 }
 
 const dialogsStore = new DialogsStore();
-export {dialogsStore};
+export { dialogsStore, DialogsStore };

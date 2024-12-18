@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DialogList = () => {
+const DialogList: React.FC = () => {
   const users = [
     { id: 1, username: "Alice" },
     { id: 2, username: "Bob" },
@@ -22,4 +22,4 @@ const DialogList = () => {
   );
 };
 
-export {DialogList};
+export { DialogList };

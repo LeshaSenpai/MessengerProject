@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import s from "./RedirectPage.module.css";
+import "./RedirectPage.css";
 
-const RedirectPage = () => {
+const RedirectPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
@@ -10,9 +10,9 @@ const RedirectPage = () => {
   };
 
   return (
-    <div className={s.redirectPage}>
+    <div className="redirectPage">
       <h1>Извините, данная страница недоступна</h1>
-      <button onClick={handleGoHome} className={s.goHomeButton}>
+      <button onClick={handleGoHome} className="goHomeButton">
         На главную
       </button>
     </div>
