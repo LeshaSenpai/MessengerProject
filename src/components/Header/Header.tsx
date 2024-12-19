@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         src="https://www.freelogodesign.org/Content/img/logo-ex-7.png"
         alt="Logo"
       />
-      <Link to={`/Authorization`} className="profileButton">
+      <Link to={`/login`} className="profileButton">
         Authorization
       </Link>
     </header>

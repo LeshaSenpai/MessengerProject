@@ -7,12 +7,12 @@ import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Users from "./components/Users/Users";
 import RedirectPage from "./components/Redirect/RedirectPage";
-import AuthorizationForm from "./components/Authorisation/Auth";
+import AuthorizationForm from "./components/Authorisation/Authorisation";
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
 import UserProfile from "./components/Users/UserProfile/UserProfile";
 import Login from "./components/Authorisation/Login";
-import Dashboard from "./components/Authorisation/Dashboard";
+import Authorisation from "./components/Authorisation/Authorisation";
 import { profileStore } from "./stores/ProfileStore";
 import { dialogsStore } from "./stores/DialogsStore";
 import { newsStore } from "./stores/NewsStore";
@@ -28,10 +28,17 @@ const App: React.FC = () => {
           <Route path="/dialogs" element={<Dialogs store={dialogsStore} />} />
           <Route path="/dialogs/:username" element={<DialogPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Dashboard" element={<Dashboard />}/>
           <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
-          <Route path="/authorization" element={<AuthorizationForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+          path="/protected"
+            element={
+            <Authorisation>
+                <Login />
+            </Authorisation>
+            }
+          />
           <Route path="*" element={<RedirectPage />} />
         </Routes>
       </div>
