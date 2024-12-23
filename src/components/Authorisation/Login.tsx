@@ -56,7 +56,7 @@ const Login: React.FC = () => {
       setPasswordError("Требуется ввести пароль.");
     } else if (!hasLetters || !hasNumbers) {
       setPasswordError("Пароль должен содержать как буквы, так и цифры.");
-    } else {
+    } else { 
       setPasswordError("");
     }
   };

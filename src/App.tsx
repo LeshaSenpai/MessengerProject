@@ -12,6 +12,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import DialogPage from "./components/Dialogs/DialogPage/DialogPage";
 import UserProfile from "./components/Users/UserProfile/UserProfile";
 import Login from "./components/Authorisation/Login";
+import Music from "./components/Music/Music";
 import Authorisation from "./components/Authorisation/Authorisation";
 import { profileStore } from "./stores/ProfileStore";
 import { dialogsStore } from "./stores/DialogsStore";
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Route path="/dialogs" element={<Dialogs store={dialogsStore} />} />
           <Route path="/dialogs/:username" element={<DialogPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/music" element={<Music />} />
           <Route path="/profile/:username" element={<UserProfile />} />
           <Route path="/news" element={<News store={newsStore} />} />
           <Route path="/login" element={<Login />} />
