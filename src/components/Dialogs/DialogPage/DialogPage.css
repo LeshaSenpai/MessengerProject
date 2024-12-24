@@ -1,0 +1,43 @@
+.dialogPage {
+    padding: 20px;
+  }
+  
+  .messages {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+  }
+  
+  .myMessage {
+    text-align: right;
+    margin: 5px 0;
+  }
+  
+  .theirMessage {
+    text-align: left;
+    margin: 5px 0;
+  }
+  
+  .inputArea {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
