@@ -13,7 +13,7 @@ const Music: React.FC = () => {
 
   return (
     <div className="music-page">
-      <div className="header">
+      <div className="header-music">
         <h2>
           Загружайте свои треки и слушайте их с друзьями
           <span
@@ -47,6 +47,10 @@ const Music: React.FC = () => {
       <div className="player-section">
         <audio controls>
           <source src={require("./track.mp3")} type="audio/mpeg" />
+          Ваш браузер не поддерживает аудио плеер.
+        </audio>
+        <audio controls>
+          <source src={require("./RussellBrower.mp3")} type="audio/mpeg" />
           Ваш браузер не поддерживает аудио плеер.
         </audio>
       </div>
